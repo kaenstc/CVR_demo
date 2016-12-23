@@ -44,7 +44,7 @@ void Test_HikOnline()
     NET_DVR_CHECK_DDNS_RET	struDDNSCheckRet = {0};
     memcpy(struDDNSCond.szClientVersion, "5.2.5.2 build20160715", strlen("5.2.5.2 build20160715"));
     memcpy(struDDNSCond.szResolveSvrAddr, struCountryIDRet.szResolveSvrAddr, strlen(struCountryIDRet.szResolveSvrAddr));
-    memcpy(struDDNSCond.szDevNickName, "ncqlhyx2", strlen("ncqlhyx2"));//your dvr/ipc nickname
+    memcpy(struDDNSCond.szDevNickName, "nf002", strlen("nf002"));//your dvr/ipc nickname
 //    memcpy(struDDNSCond.szDevSerial, "serial no.", strlen("serial no."));//your dvr/ipc serial no.
     if(NET_DVR_GetAddrInfoByServer(QUERYDEV_BY_NICKNAME_DDNS, &struDDNSCond, sizeof(struDDNSCond), &struDDNSQueryRet, sizeof(struDDNSQueryRet)))
     {
@@ -570,7 +570,7 @@ void TEST_Other(int iPreviewID, int iUserID, int iChan, int iPlaybackID)
 //    Test_CaptureJPEGPicture(iUserID, iChan);
 //    Test_CaptureJPEGPicture_NEW(iUserID, iChan);
 //    Test_ZeroChanPreview(iUserID, 1);
-    Test_TransChannel(iUserID);
+//    Test_TransChannel(iUserID);
 //    Test_Serial(iUserID);
 //    Test_DVRMakeKeyFrame(iUserID, iChan);
 //    Test_DVRMakeKeyFrameSub(iUserID, iChan);
@@ -670,34 +670,3 @@ void Test_FindFiles(int iUserID ,int iChan)
         NET_DVR_FindClose_V30(hFindHandle);
     }
 }
-//
-//BOOL TEST_getDVR_IPAddress(char* sGetIP, DWORD *dwPort)
-//{
-//    char *sServerIP = new char[strlen("www.hik-online.com")];
-//    memcpy(sServerIP, "www.hik-online.com", strlen("www.hik-online.com"));
-//    
-//    NET_DVR_QUERY_DDNS_COND pInBuf = {0};
-//    memcpy(pInBuf.szResolveSvrAddr, "www.hik-online.com", strlen("www.hik-online.com"));
-//    memcpy(pInBuf.szDevNickName, "ncqlhyx", strlen("ncqlhyx"));
-//    
-//    DWORD dwInBufLen = sizeof(pInBuf.szResolveSvrAddr);
-//    void* pOutBuf;
-//    DWORD dwOutBufLen = sizeof(pOutBuf);
-//    BOOL success = NET_DVR_GetAddrInfoByServer(QUERYDEV_BY_NICKNAME_DDNS, &pInBuf,dwInBufLen, pOutBuf, dwOutBufLen);
-//    printf("\n get ip success : %d",success);
-//    if (!success) {
-//        DWORD errorCode = NET_DVR_GetLastError();
-//        printf("\n get ip error code : %d",errorCode);
-//    }
-//    return success;
-////    BOOL NET_DVR_GetAddrInfoByServer(DWORD dwQueryType, void* pInBuf, DWORD dwInBufLen, void* pOutBuf, DWORD dwOutBufLen)
-////    [in]dwQueryType [in]pInBuf
-////    [in]dwInBufLen [out]pOutBuf
-////    查找类型，取值详见表 3.2 查找条件缓冲区，不同的查找类型对应不同的输入条件，对应关 系见表 3.2
-////    查找条件缓冲区大小 查找结果缓冲区，不同的查找类型对应不同的返回结果，对应关 系见表 3.2
-////    查找结果缓冲区大小
-////    [out]dwOutBufLen
-//////    NET_DVR_GetDVRIPByResolveSvr_EX(char *sServerIP, WORD wServerPort, BYTE *sDVRName, WORD wDVRNameLen, BYTE *sDVRSerialNumber, WORD wDVRSerialLen, char* sGetIP, DWORD *dwPort);
-//}
-
-

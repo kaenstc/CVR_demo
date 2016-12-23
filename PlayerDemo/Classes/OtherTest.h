@@ -37,7 +37,7 @@ void Test_GetDeviceAbility(int iUserID, int iChan);
 void Test_GetPTZProtocol(int iUserID);
 void Test_DeviceCfg_V40(int iUserID);
 void Test_NetCfg_V30(int iUserID);
-void Test_PicCfg_V30(int iUserID, int iChan);
+void Test_PicCfg_V30(int iUserID, int iChan);//获取或设置channel 名称
 void Test_CompressionCfg_V30(int iUserID, int iChan);
 void Test_CompressAudio(int iUserID);
 void Test_IPAlarmoutCfg(int iUserID);
@@ -80,7 +80,7 @@ void Test_FindFileByEvent(int iUserID);
 void Test_SetupAlarm(int iUserID);
 void Test_SetDVRMessageCallback();
 //other
-void Test_HikOnline();
+void Test_HikOnline();//解析服务器地址，获取设备ip 和端口
 void Test_IPServer();
 void Test_Activate();
 void Test_CaptureJPEGPicture(int iUserID, int iChan);
@@ -92,7 +92,4 @@ void Test_PlaybackSaveData(int iPlaybackID);
 
 //查找设备中存储的视频文件
 void Test_FindFiles(int iUserID ,int iChan);
-
-//获取设备ip 和端口
-//BOOL TEST_getDVR_IPAddress(char* sGetIP, DWORD *dwPort);
 #endif

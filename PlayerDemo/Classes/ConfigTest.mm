@@ -101,8 +101,9 @@ void Test_PicCfg_V30(int iUserID, int iChan)
     else
     {
         NSLog(@"NET_DVR_GET_PICCFG_V30 succ");
+        printf("\n sChanName = %s \n",struPicCfg.sChanName);
     }
-    memcpy(struPicCfg.sChanName, "test channel", strlen("test channel"));
+    memcpy(struPicCfg.sChanName, "test channel 1", strlen("test channel 1"));
     if(!NET_DVR_SetDVRConfig(iUserID, NET_DVR_SET_PICCFG_V30, iChan, &struPicCfg, sizeof(struPicCfg)))
     {
         NSLog(@"NET_DVR_SET_PICCFG_V30 failed with[%d]", NET_DVR_GetLastError());
@@ -594,7 +595,7 @@ void TEST_Config(int iPreviewID, int iUserID, int iChan)
 //    Test_IPAlarmoutCfg(iUserID);
 //    Test_IPParaCfg_V40(iUserID);
 //    Test_AlarminCfg_V30(iUserID);
-    Test_AlarmOutCfg_V30(iUserID);
+//    Test_AlarmOutCfg_V30(iUserID);
 //    Test_NTPPara(iUserID);
 //    Test_DecoderCfg_V30(iUserID);
 //    Test_AuxAlarmCfg(iUserID);
